@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Countdown</title>
+
+<style>
+body{
+    margin:0;
+    height: auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#cce6ff; /* آبی روشن کامل */
+    font-family:Segoe UI;
+}
+
+.card{
+    background:white;
+    width:340px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+img{
+    width:100%;
+    border-radius:15px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 25px;
+    background:#3399ff;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#1a75ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+    <img id = "poster" src="file:///D:images/28.png">
+    <button onclick="nextSlide()">Next ➡️</button>
+</div>
+
+<script>
+
+let posters = ["file:///D:images/27.png","file:///D:images/26.png","file:///D:images/25.png","file:///D:images/24.png","file:///D:images/23.png","file:///D:images/22.png","file:///D:images/21.png"
+,"file:///D:images/20.png","file:///D:images/19.png","file:///D:images/18.png","file:///D:images/17.png","file:///D:images/16.png","file:///D:images/15.png","file:///D:images/14.png"
+,"file:///D:images/13.png","file:///D:images/12.png","file:///D:images/11.png","file:///D:images/10.png","file:///D:images/9.png","file:///D:images/8.png","file:///D:images/7.png","file:///D:images/6.png"
+,"file:///D:images/5.png","file:///D:images/4.png","file:///D:images/3.png","file:///D:images/2.png","file:///D:images/1.png","file:///D:images/0.png"
+];
+
+let current = 0;
+
+function nextSlide(){
+    current++;
+
+    if(current < posters.length){
+        document.getElementById("poster").src = posters[current];
+    } 
+    else {
+        document.getElementById("card").innerHTML =
+        "<h2 style='color:#0066cc;'>🎉 HAPPY Birth 💙</h2><p>You worth every single day.</p>";
+    }
+}
+
+</script>
+
+</body>
+</html>
